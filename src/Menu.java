@@ -9,6 +9,8 @@ public class Menu {
     private static void highVelocityNavigationMenu(ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
         int option;
 
+        HighVelocityProblem highVelocityProblem = new HighVelocityProblem();
+
         //Change options as needed. More approaches can be added
 
         do {
@@ -47,6 +49,8 @@ public class Menu {
 
     private static void entireFleetMenu(ArrayList<Vessel> vessels) {
         int option;
+
+        EntireFleetProblem entireFleetProblem = new EntireFleetProblem();
 
         //Change options as needed. More approaches can be added
 
