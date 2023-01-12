@@ -1,4 +1,5 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
+
 
 public class Main {
 
@@ -6,8 +7,8 @@ public class Main {
 
         int option;
 
-        LinkedList<Vessel> vessels;
-        LinkedList<Sailor> sailors;
+        ArrayList<Vessel> vessels;
+        ArrayList<Sailor> sailors;
         vessels = Menu.DatasetSelectionVessels();
         sailors = Menu.DatasetSelectionNavigators();
 

@@ -1,12 +1,12 @@
 
 import java.lang.reflect.Field;
 import java.util.InputMismatchException;
-import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Menu {
 
-    public static void runSelectedOption(int option, LinkedList<Vessel> vessels, LinkedList<Sailor> sailors) {
+    public static void runSelectedOption(int option, ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
 
         long initialTime;
         long executionTime;         //Here we will store the execution time of an algorithm
@@ -90,9 +90,9 @@ public class Menu {
     }
 
     //Asks the user which datasets he wants to load and loads the chosen dataset
-    public static LinkedList<Vessel> DatasetSelectionVessels() {
+    public static ArrayList<Vessel> DatasetSelectionVessels() {
 
-        LinkedList<Vessel> vessels;
+        ArrayList<Vessel> vessels;
         int option;
 
         System.out.println("\nWelcome to CatTheHobie - The Sequel!");
@@ -110,6 +110,7 @@ public class Menu {
         switch (option) {
             case 1:
                 vessels = DatasetLoader.loadVessels("boatsXS.txt");
+                printSortedObjectList(vessels, true);
                 break;
 
             case 2:
@@ -132,9 +133,9 @@ public class Menu {
         return vessels;
     }
 
-    public static LinkedList<Sailor> DatasetSelectionNavigators() {
+    public static ArrayList<Sailor> DatasetSelectionNavigators() {
 
-        LinkedList<Sailor> sailors;
+        ArrayList<Sailor> sailors;
         int option;
 
         System.out.println("\nDataset selection");
@@ -150,6 +151,7 @@ public class Menu {
         switch (option) {
             case 1:
                 sailors = DatasetLoader.loadNavigator("sailorsXS.txt");
+                printSortedObjectList(sailors, true);
                 break;
 
             case 2:
@@ -183,21 +185,21 @@ public class Menu {
     }
 
 
-    private static void printSortedObjectList(LinkedList<Vessel> vessels, Boolean ascendingOrder) {
+    private static void printSortedObjectList(ArrayList<?> objects, Boolean ascendingOrder) {
         int i;
 
         if (ascendingOrder) {
-            for (i = 0; i < vessels.size(); i++) {
-                printObjectFields(vessels, i);
+            for (i = 0; i < objects.size(); i++) {
+                printObjectFields(objects, i);
             }
         } else {
-            for (i = vessels.size() - 1; i >= 0; i--) {
-                printObjectFields(vessels, i);
+            for (i = objects.size() - 1; i >= 0; i--) {
+                printObjectFields(objects, i);
             }
         }
     }
 
-    private static void printObjectFields(LinkedList<?> objects, int i) {
+    private static void printObjectFields(ArrayList<?> objects, int i) {
         System.out.print("\n\n");
         for (Field field : objects.get(i).getClass().getFields()) {
             String name = field.getName();

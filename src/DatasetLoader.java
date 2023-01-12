@@ -4,7 +4,8 @@ import java.nio.file.Path;
 
 import java.io.IOException;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+
 import java.util.List;
 
 public class DatasetLoader {
@@ -33,13 +34,13 @@ public class DatasetLoader {
 
         return sailor;
     }
-    public static LinkedList<Vessel> loadVessels(String datasetName) {
+    public static ArrayList<Vessel> loadVessels(String datasetName) {
 
         Path path = Path.of("datasets/" + datasetName);
 
         boolean firstLine = true;
 
-        LinkedList<Vessel> vesselsList = new LinkedList<>();
+        ArrayList<Vessel> vesselsList = new ArrayList<>();
 
         try {
             List<String> csvLines = Files.readAllLines(path);
@@ -57,13 +58,13 @@ public class DatasetLoader {
             return vesselsList;
         }
     }
-    public static LinkedList<Sailor> loadNavigator(String datasetName) {
+    public static ArrayList<Sailor> loadNavigator(String datasetName) {
 
         Path path = Path.of("datasets/" + datasetName);
 
         boolean firstLine = true;
 
-        LinkedList<Sailor> sailorList = new LinkedList<>();
+        ArrayList<Sailor> sailorList = new ArrayList<>();
 
         try {
             List<String> csvLines = Files.readAllLines(path);
