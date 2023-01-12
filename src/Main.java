@@ -15,10 +15,10 @@ public class Main {
         do {
 
             Menu.show();
-            option = Menu.askForInteger("Please choose an option: ", 1, 4);
-            Menu.runSelectedOption(option, vessels, sailors);
+            option = Menu.askForInteger("Please choose an option: ", 1, 3);
+            Menu.runSelectedMenu(option, vessels, sailors);
 
-        } while (option != 4);
+        } while (option != 3);
 
     }
 

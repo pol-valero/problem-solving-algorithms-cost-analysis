@@ -6,45 +6,98 @@ import java.util.ArrayList;
 
 public class Menu {
 
-    public static void runSelectedOption(int option, ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
+    private static void highVelocityNavigationMenu(ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
+        int option;
 
-        long initialTime;
-        long executionTime;         //Here we will store the execution time of an algorithm
+        //Change options as needed. More approaches can be added
+
+        do {
+
+        System.out.println("\nHow do you want to solve the problem? ");
+        System.out.print("\n\t1) Bruteforce approach");
+        System.out.print("\n\t2) Backtracking approach");
+        System.out.print("\n\t3) Backtracking with 'PBMSC' and 'Marcatge' approach");
+        System.out.print("\n\t4) Greedy approach");
+        System.out.print("\n\t5) Go back\n\n");
+
+        option = Menu.askForInteger("Please choose an option: ", 1, 5);
+
+            switch (option) {
+
+                case 1:
+                    //Bruteforce
+                    break;
+
+                case 2:
+                    //Backtracking
+                    break;
+
+                case 3:
+                    //Backtracking with PBMSC and Marcatge
+                    break;
+
+                case 4:
+                    //Greedy approach
+                    break;
+            }
+
+        } while (option != 5);
+
+    }
+
+    private static void entireFleetMenu(ArrayList<Vessel> vessels) {
+        int option;
+
+        //Change options as needed. More approaches can be added
+
+        do {
+
+            System.out.println("\nHow do you want to solve the problem? ");
+            System.out.print("\n\t1) Bruteforce approach");
+            System.out.print("\n\t2) Backtracking approach");
+            System.out.print("\n\t3) Backtracking with 'PBMSC' and 'Marcatge' approach");
+            System.out.print("\n\t4) Branch and bound approach");
+            System.out.print("\n\t5) Go back\n\n");
+
+            option = Menu.askForInteger("Please choose an option: ", 1, 5);
+
+            switch (option) {
+
+                case 1:
+                    //Bruteforce
+                    break;
+
+                case 2:
+                    //Backtracking
+                    break;
+
+                case 3:
+                    //Backtracking with PBMSC and Marcatge
+                    break;
+
+                case 4:
+                    //Branch and bound approach
+                    break;
+            }
+
+        } while (option != 5);
+
+    }
+
+    public static void runSelectedMenu(int option, ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
+
 
         switch (option) {
 
             case 1:
-                initialTime = System.nanoTime();
-                //SortingAlgorithms.quickSortAge(vessels);                                                //We sort the vessels list by age with quickSort
-                executionTime = System.nanoTime() - initialTime;
-
-                System.out.println("\nThe vessels have been sorted by age using QuickSort");
-                printSortedObjectList(vessels, false);
-                System.out.println("\nSorting algorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
+                highVelocityNavigationMenu(vessels, sailors);
                 break;
 
             case 2:
-
-                initialTime = System.nanoTime();
-                //SortingAlgorithms.mergeSortName(vessels);                                               //We sort the vessels list by name with mergeSort
-                executionTime = System.nanoTime() - initialTime;
-
-                System.out.println("\nThe vessels have been sorted by name using MergeSort");
-                //printSortedObjectList(vessels, true);
-                System.out.println("\nSorting algorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
+                entireFleetMenu(vessels);
                 break;
 
             case 3:
-                initialTime = System.nanoTime();
-                //SortingAlgorithms.bucketSortCapabilities(vessels);                                      //We sort the vessels list by capabilities with bucketSort
-                executionTime = System.nanoTime() - initialTime;
-
-                System.out.println("\nThe vessels have been sorted by name using BucketSort");
-                //printSortedObjectList(vessels,false);
-                System.out.println("\nSorting algorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
-                break;
-
-            case 4:
                 System.out.print("\u001B[31m");
                 System.out.print("\n───────────────────────────────────────────────────────────\n" +
                         "─██████████████───████████──████████─██████████████─██████─\n" +
@@ -110,7 +163,6 @@ public class Menu {
         switch (option) {
             case 1:
                 vessels = DatasetLoader.loadVessels("boatsXS.txt");
-                printSortedObjectList(vessels, true);
                 break;
 
             case 2:
@@ -151,7 +203,6 @@ public class Menu {
         switch (option) {
             case 1:
                 sailors = DatasetLoader.loadNavigator("sailorsXS.txt");
-                printSortedObjectList(sailors, true);
                 break;
 
             case 2:
@@ -178,10 +229,9 @@ public class Menu {
         System.out.println(
                 "\n--------------------------------------------------------------------\n" +
                         "\nWhat do you want to do?\n\n" +
-                        "   1. Sort vessels by age\n" +
-                        "   2. Sort vessels by name\n" +
-                        "   3. Sort vessels by capabilities\n" +
-                        "   4. Exit\n\n--------------------------------------------------------------------\n");
+                        "   1. Solve 'High velocity navigation' problem\n" +
+                        "   2. Solve 'Entire fleet' problem\n" +
+                        "   3. Exit\n\n--------------------------------------------------------------------\n");
     }
 
 
