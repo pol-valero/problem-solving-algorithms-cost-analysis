@@ -27,7 +27,7 @@ public class Menu {
             switch (option) {
 
                 case 1:
-                    //Bruteforce
+                    highVelocityProblem.bruteforce(vessels, sailors);
                     break;
 
                 case 2:
