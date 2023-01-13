@@ -27,7 +27,7 @@ public class Menu {
             switch (option) {
 
                 case 1:
-                    //Bruteforce
+                    highVelocityProblem.bruteforce(vessels, sailors);
                     break;
 
                 case 2:
@@ -186,6 +186,8 @@ public class Menu {
                 vessels = DatasetLoader.loadVessels("boatsXS.txt");
                 break;
         }
+
+        HighVelocityProblem.findMinVesselWeight(vessels);
 
         return vessels;
     }
