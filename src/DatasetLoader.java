@@ -83,4 +83,23 @@ public class DatasetLoader {
         }
     }
 
+    public static ArrayList<Center> loadCenter(ArrayList<Vessel> vessels){
+        ArrayList<Center> centers = new ArrayList<Center>();
+
+        for (Vessel vessel:vessels) {
+            boolean found = false;
+            for (int i = 0; i < centers.size(); i++) {
+                if (centers.get(i).name.equals(vessel.center)){
+                    centers.get(i).new_boat(vessel.type);
+                    found = true;
+                }
+            }
+            if (!found){
+                Center center = new Center(vessel.center,vessel.type);
+                centers.add(center);
+            }
+        }
+        return centers;
+    }
+
 }

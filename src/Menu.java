@@ -52,6 +52,8 @@ public class Menu {
 
         EntireFleetProblem entireFleetProblem = new EntireFleetProblem();
 
+        ArrayList<Center> centers;
+        centers = DatasetLoader.loadCenter(vessels);
         //Change options as needed. More approaches can be added
 
         do {
@@ -89,7 +91,6 @@ public class Menu {
     }
 
     public static void runSelectedMenu(int option, ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
-
 
         switch (option) {
 
@@ -230,6 +231,7 @@ public class Menu {
     }
 
     public static void show() {
+
         System.out.println(
                 "\n--------------------------------------------------------------------\n" +
                         "\nWhat do you want to do?\n\n" +
