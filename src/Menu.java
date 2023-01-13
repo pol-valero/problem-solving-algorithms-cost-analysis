@@ -186,6 +186,8 @@ public class Menu {
                 break;
         }
 
+        HighVelocityProblem.findMinVesselWeight(vessels);
+
         return vessels;
     }
 
