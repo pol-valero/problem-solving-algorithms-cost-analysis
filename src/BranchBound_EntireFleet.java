@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.IntBinaryOperator;
 
 public class BranchBound_EntireFleet {
+
     public class Config implements Comparable<Config>{
         // La configuració que guardem en la caixa
         public final int[] config;
@@ -10,7 +12,7 @@ public class BranchBound_EntireFleet {
         private final String[] all_types = {"Windsurf", "Optimist", "Laser", "Patí Català", "HobieDragoon", "HobieCat"};
         private final boolean[] found_types;
         // El marcatge pel total de caixes utilitzades/caixa actual.
-        private int num_vessels;
+        private int num_centers;
         // El nivell en el qual ens trobem de la caixa
         private int level;
 
@@ -21,9 +23,10 @@ public class BranchBound_EntireFleet {
             // Creem els arrays
             config = new int[centers.size()];
             found_types = new boolean[centers.size()];
+            Arrays.fill(found_types, false);
 
             // No hem acumulat distància encara
-            num_vessels = 0;
+            num_centers = Integer.MAX_VALUE;
         }
 
         // Constructor auxiliar (privat) per "clonar" una configuració, fet servir per generar successors al "expandir"
@@ -32,7 +35,7 @@ public class BranchBound_EntireFleet {
             this.config = that.config.clone();
             this.found_types = that.found_types.clone();
             this.level = that.level;
-            this.num_vessels = that.num_vessels;
+            this.num_centers = that.num_centers;
         }
 
         // Funció auxiliar per saber si la configuració és plena (per com generem el valor k, en aquest cas comparem amb N i no N-1)
@@ -52,7 +55,7 @@ public class BranchBound_EntireFleet {
                     Config next = new Config(this);
 
                     //Sumem el nou objecte a la caixa
-                    next.num_vessels = centers.centers[save] + next.num_vessels;
+                    next.num_centers++;
 
                     // Actualitzem la configuració + marcatge segons l'objecte escollits
                     if (next.box_volume > Global.volume_Max){
@@ -130,4 +133,5 @@ public class BranchBound_EntireFleet {
             //return "Config: " + Arrays.toString(config) + " - Level: " + level + " - Cost: " + getCost();     //Debug
             return "Config: " + Arrays.toString(config) + " - Boxes of carrying: " + getCost() + " - Group: " + Arrays.toString(group()) + " - Price: " + getCost() * Global.price_Box;
         }
+
 }

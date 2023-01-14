@@ -54,6 +54,7 @@ public class Menu {
 
         ArrayList<Center> centers;
         centers = DatasetLoader.loadCenter(vessels);
+        //printSortedObjectList(centers,true);  --- For Debbug
         //Change options as needed. More approaches can be added
 
         do {
@@ -79,6 +80,7 @@ public class Menu {
 
                 case 3:
                     //Backtracking with PBMSC and Marcatge
+                    EntireFleetProblem.BackTracking_Problem(centers);
                     break;
 
                 case 4:

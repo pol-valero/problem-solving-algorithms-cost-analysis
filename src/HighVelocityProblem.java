@@ -150,7 +150,6 @@ public class HighVelocityProblem {
                 vesselCapacity = vessels[config[i]].capacity;
 
                 for (int j = 0; j <= k; j++) {
-
                     if (config[i] == config[j] && i != j) {
                         checked[j] = true;
 
@@ -164,7 +163,6 @@ public class HighVelocityProblem {
 
             }
         }
-
         return true;
     }
 }
