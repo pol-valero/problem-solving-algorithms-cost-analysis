@@ -16,6 +16,7 @@ public class Main {
 
         do {
 
+
             Menu.show();
             option = Menu.askForInteger("Please choose an option: ", 1, 3);
             Menu.runSelectedMenu(option, vessels, sailors);

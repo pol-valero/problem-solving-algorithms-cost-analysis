@@ -54,7 +54,7 @@ public class Menu {
 
         ArrayList<Center> centers;
         centers = DatasetLoader.loadCenter(vessels);
-        //printSortedObjectList(centers,true);  --- For Debbug
+        printSortedObjectList(centers,true);  //--- For Debbug
         //Change options as needed. More approaches can be added
 
         do {
@@ -85,6 +85,7 @@ public class Menu {
 
                 case 4:
                     //Branch and bound approach
+                    EntireFleetProblem.Greedy_Problem(centers);
                     break;
             }
 
