@@ -90,7 +90,9 @@ public class DatasetLoader {
             boolean found = false;
             for (int i = 0; i < centers.size(); i++) {
                 if (centers.get(i).name.equals(vessel.center)){
-                    centers.get(i).new_boat(vessel.type);
+                    if (!centers.get(i).types.contains(vessel.type)){
+                        centers.get(i).new_boat(vessel.type);
+                    }
                     found = true;
                 }
             }

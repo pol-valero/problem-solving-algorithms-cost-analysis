@@ -14,7 +14,7 @@ public class Greedy_EntireFleet implements Comparable<Greedy_EntireFleet>{
         private int num_centers;
         // El nivell en el qual ens trobem de la caixa
         private int level;
-        private int num_found = 0;
+        public int num_found = 0;
 
 
 
@@ -34,6 +34,7 @@ public class Greedy_EntireFleet implements Comparable<Greedy_EntireFleet>{
         // Constructor auxiliar (privat) per "clonar" una configuració, fet servir per generar successors al "expandir"
         // Tinguem present que això té cost linear, pel que esperem podar més que el que afegim fent això
         public Greedy_EntireFleet(Greedy_EntireFleet that) {
+            this.num_found = that.num_found;
             this.config = that.config.clone();
             this.center_picked = that.center_picked.clone();
             this.found_types = that.found_types.clone();

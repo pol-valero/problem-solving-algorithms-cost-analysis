@@ -47,8 +47,8 @@ public class EntireFleetProblem {
                             queue.offer(child);
                         } else {
                             // Debugging comentat per evitar gastar més recursos del compte
-                            System.out.println(child);
-                            System.out.println("PBCBS");
+                            //System.out.println(child);
+                            //System.out.println("PBCBS");
                         }
                     }
                 }
