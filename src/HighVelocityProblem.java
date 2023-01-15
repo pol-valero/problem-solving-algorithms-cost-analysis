@@ -5,7 +5,6 @@ public class HighVelocityProblem {
         boolean[] sailor_picked = new boolean[sailors.size()];
         Arrays.fill(sailor_picked, false);
         float total_speed = 0;
-        boolean firstTime = true;
 
         StringBuilder string = new StringBuilder("");
 
@@ -16,10 +15,7 @@ public class HighVelocityProblem {
 
                 if (BackTracking_HighVelocity.config_win[i] == 1) {
 
-                    if(firstTime) {
-                        Menu.finished();
-                    }
-                    firstTime = false;
+
 
                     sailor_picked[i] = true;
 
@@ -27,6 +23,8 @@ public class HighVelocityProblem {
                     System.out.println("Tripulacion: " + sailors.get(i).name);
                 }
             }
+            Menu.finished();
+
             System.out.println("--- Vessel name: " + a.name + " : Real Speed: " + BackTracking_HighVelocity.bestConfig +" ---");
             System.out.println();
             total_speed += BackTracking_HighVelocity.bestConfig;
