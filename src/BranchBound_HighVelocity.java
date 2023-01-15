@@ -29,7 +29,7 @@ public class BranchBound_HighVelocity implements Comparable<BranchBound_HighVelo
 
             // No hem acumulat distància encara
             level = 0;
-            sailor_impact = 0;
+            sailor_impact = 1.0f;
         }
 
         // Constructor auxiliar (privat) per "clonar" una configuració, fet servir per generar successors al "expandir"
@@ -62,7 +62,7 @@ public class BranchBound_HighVelocity implements Comparable<BranchBound_HighVelo
                     // Actualitzem la configuració + marcatge segons la ciutat escollida
                     next.config[level] = city;
                     next.sailor_picked[city] = true;
-                    next.sailor_impact += sailorImpact(sailors.get(city),vessel);
+                    next.sailor_impact = sailor_impact * sailorImpact(sailors.get(city),vessel);
 
                     // Incrementem el nivell (ja que és un successor)
                     next.level++;
