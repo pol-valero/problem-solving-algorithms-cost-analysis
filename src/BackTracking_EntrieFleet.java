@@ -3,10 +3,11 @@ import java.util.Arrays;
 
 public class BackTracking_EntrieFleet {
     private static String[] all_types = {"Windsurf", "Optimist", "Laser", "Patí Català", "HobieDragoon", "HobieCat"};
-    private static int bestConfig = Integer.MAX_VALUE;
+    private static int bestConfig;
 
     public static void Backtracking(ArrayList<Center> centro) {
         int[] config = new int[centro.size()];
+        bestConfig = Integer.MAX_VALUE;
 
         // Just for illustration purposes when debugging step by step
         Arrays.fill(config, -1);
