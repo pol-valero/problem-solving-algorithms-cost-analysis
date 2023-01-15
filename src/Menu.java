@@ -32,11 +32,12 @@ public class Menu {
 
                 case 2:
                     //Backtracking
-                    highVelocityProblem.BackTracking_Problem(vessels,sailors);
+                    HighVelocityProblem.BackTracking_Problem(vessels,sailors);
                     break;
 
                 case 3:
                     //Backtracking with PBMSC and Marcatge
+                    HighVelocityProblem.BranchBound_Problem(sailors, vessels);
                     break;
 
                 case 4:

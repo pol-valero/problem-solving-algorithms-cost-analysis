@@ -10,8 +10,7 @@ public class BackTracking_HighVelocity {
     public static void Backtracking(ArrayList<Sailor> sailors, Vessel vessel, ArrayList<Vessel> vessels, boolean[] picked) {
         int[] config = new int[sailors.size()];
         config_win = new int[sailors.size()];
-        sailor_picked = picked;
-        Arrays.fill(sailor_picked,false);
+        sailor_picked = picked.clone();
         // Just for illustration purposes when debugging step by step
         Arrays.fill(config, -1);
         bestConfig = 0;
@@ -46,7 +45,7 @@ public class BackTracking_HighVelocity {
         for (int i = 0; i <= k; i++) {
             num_sailors += config[i];
         }
-        if (config[k] == 1 && !sailor_picked[k]){
+        if (config[k] == 1 && sailor_picked[k]){
             return false;
         }
         return (num_sailors <= vessel.capacity);
@@ -65,7 +64,10 @@ public class BackTracking_HighVelocity {
         if (num_sailors != vessel.capacity){
             return;
         }
-        double actual_speed = getRealSpeed(vessel, Tripulation);;
+        double actual_speed = getRealSpeed(vessel, Tripulation);
+        if (config[sailors.size() - 1] == 1 && sailor_picked[sailors.size() - 1]){
+            return;
+        }
 
 
         if (bestConfig < actual_speed) {
