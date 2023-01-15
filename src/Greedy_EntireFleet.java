@@ -8,7 +8,7 @@ public class Greedy_EntireFleet implements Comparable<Greedy_EntireFleet>{
         public final int[] config;
         // L'array de marcatge pels tresors emmagatzemat
         private final String[] all_types = {"Windsurf", "Optimist", "Laser", "Patí Català", "HobieDragoon", "HobieCat"};
-        private boolean[] found_types;
+        public boolean[] found_types;
         private boolean[] center_picked;
         // El marcatge pel total de caixes utilitzades/caixa actual.
         private int num_centers;

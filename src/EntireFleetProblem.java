@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -7,7 +8,8 @@ public class EntireFleetProblem {
             BackTracking_EntrieFleet.Backtracking(centro);
         }
         public static void Greedy_Problem(ArrayList<Center> centro){
-
+            boolean[] found = {true,true,true,true,true,true};
+            boolean flag = false;
             // Iniciaització de l'array de distàncies mínimes
             int best = Integer.MAX_VALUE;
 
@@ -33,11 +35,12 @@ public class EntireFleetProblem {
                     // Si és solució (hem pres totes les decisions)
                     if (child.isFull()) {
                         // Procés d'optimització
-                        if (child.getCost() < best) {
+                        if (child.getCost() < best && Arrays.equals(child.found_types, found)) {
                             best = child.getCost();
                             // Printem per debugar
                             System.out.println(child);
                             System.out.println("Best one!");
+                            flag = true;
                         }
                     } else {
                         // Si no és solució (encara queden decisions per prendre)
@@ -52,6 +55,9 @@ public class EntireFleetProblem {
                         }
                     }
                 }
+            }
+            if (!flag){
+                System.out.println("No hay solucion");
             }
         }
 }
