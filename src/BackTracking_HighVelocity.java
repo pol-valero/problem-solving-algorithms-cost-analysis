@@ -74,16 +74,6 @@ public class BackTracking_HighVelocity {
             bestConfig = actual_speed;
             config_win = config.clone();
 
-/*
-            System.out.println("--- A better configuration was found ---");                                         //Para debug
-
-            for (int i = 0; i < Tripulation.size(); i++) {
-                    System.out.println("Tripulacion: " + Tripulation.get(i).name);
-            }
-            System.out.println("--- Vessel name: " + vessel.name + " : Real Speed: " + actual_speed + " ---");
-
-            System.out.println();
-*/
 
         }
     }
