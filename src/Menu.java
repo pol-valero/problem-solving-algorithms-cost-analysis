@@ -27,11 +27,12 @@ public class Menu {
             switch (option) {
 
                 case 1:
-                    highVelocityProblem.bruteforce(vessels, sailors);
+                    //highVelocityProblem.bruteforce(vessels, sailors);
                     break;
 
                 case 2:
                     //Backtracking
+                    highVelocityProblem.BackTracking_Problem(vessels,sailors);
                     break;
 
                 case 3:
@@ -190,7 +191,7 @@ public class Menu {
                 break;
         }
 
-        HighVelocityProblem.findMinVesselWeight(vessels);
+        //HighVelocityProblem.findMinVesselWeight(vessels);
 
         return vessels;
     }
