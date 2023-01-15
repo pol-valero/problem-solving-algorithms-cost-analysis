@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class BackTracking_EntrieFleet {
+public class BackTracking_EntireFleet {
     private static String[] all_types = {"Windsurf", "Optimist", "Laser", "Patí Català", "HobieDragoon", "HobieCat"};
     private static int bestConfig;
 
@@ -75,6 +75,8 @@ public class BackTracking_EntrieFleet {
         }
         if (bestConfig > total_centers) {
             bestConfig = total_centers;
+
+            Menu.finished();
 
             System.out.println("--- A better configuration was found ---");
 

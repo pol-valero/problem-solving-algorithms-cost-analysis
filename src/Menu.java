@@ -6,92 +6,86 @@ import java.util.ArrayList;
 
 public class Menu {
 
+    private static long initialTime;
+    private static long executionTime;
+
+    public static void finished() {
+        executionTime = System.nanoTime() - initialTime;
+    }
+
     private static void highVelocityNavigationMenu(ArrayList<Vessel> vessels, ArrayList<Sailor> sailors) {
         int option;
 
-        HighVelocityProblem highVelocityProblem = new HighVelocityProblem();
+
 
         //Change options as needed. More approaches can be added
-
         do {
 
         System.out.println("\nHow do you want to solve the problem? ");
-        System.out.print("\n\t1) Bruteforce approach");
-        System.out.print("\n\t2) Backtracking approach");
-        System.out.print("\n\t3) Backtracking with 'PBMSC' and 'Marcatge' approach");
-        System.out.print("\n\t4) Greedy approach");
-        System.out.print("\n\t5) Go back\n\n");
+        System.out.print("\n\t1) Backtracking approach");
+        System.out.print("\n\t2) Branch and Bound approach");
+        System.out.print("\n\t3) Go back\n\n");
 
-        option = Menu.askForInteger("Please choose an option: ", 1, 5);
+        option = Menu.askForInteger("Please choose an option: ", 1, 3);
 
             switch (option) {
 
                 case 1:
-                    //highVelocityProblem.bruteforce(vessels, sailors);
+                    initialTime = System.nanoTime();
+                    HighVelocityProblem.BackTracking_Problem(vessels,sailors);
+
+                    System.out.println("\nAlgorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
                     break;
 
                 case 2:
-                    //Backtracking
-                    HighVelocityProblem.BackTracking_Problem(vessels,sailors);
-                    break;
-
-                case 3:
-                    //Backtracking with PBMSC and Marcatge
+                    initialTime = System.nanoTime();
                     HighVelocityProblem.BranchBound_Problem(sailors, vessels);
+
+                    System.out.println("\nAlgorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
                     break;
 
-                case 4:
-                    //Greedy approach
-                    break;
             }
 
-        } while (option != 5);
+        } while (option != 3);
 
     }
 
     private static void entireFleetMenu(ArrayList<Vessel> vessels) {
         int option;
 
-        EntireFleetProblem entireFleetProblem = new EntireFleetProblem();
 
         ArrayList<Center> centers;
         centers = DatasetLoader.loadCenter(vessels);
-        printSortedObjectList(centers,true);  //--- For Debbug
+
         //Change options as needed. More approaches can be added
 
         do {
 
             System.out.println("\nHow do you want to solve the problem? ");
-            System.out.print("\n\t1) Bruteforce approach");
-            System.out.print("\n\t2) Backtracking approach");
-            System.out.print("\n\t3) Backtracking with 'PBMSC' and 'Marcatge' approach");
-            System.out.print("\n\t4) Branch and bound approach");
-            System.out.print("\n\t5) Go back\n\n");
+            System.out.print("\n\t1) Backtracking approach");
+            System.out.print("\n\t2) Greedy approach");
+            System.out.print("\n\t3) Go back\n\n");
 
-            option = Menu.askForInteger("Please choose an option: ", 1, 5);
+            option = Menu.askForInteger("Please choose an option: ", 1, 3);
 
             switch (option) {
 
                 case 1:
-                    //Bruteforce
+                    initialTime = System.nanoTime();
+                    EntireFleetProblem.BackTracking_Problem(centers);
+
+                    System.out.println("\nAlgorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
                     break;
 
                 case 2:
-                    //Backtracking
-                    break;
-
-                case 3:
-                    //Backtracking with PBMSC and Marcatge
-                    EntireFleetProblem.BackTracking_Problem(centers);
-                    break;
-
-                case 4:
-                    //Branch and bound approach
+                    initialTime = System.nanoTime();
                     EntireFleetProblem.Greedy_Problem(centers);
+
+                    System.out.println("\nAlgorithm execution time: " + (double) executionTime/1000000 + " ms");     //Print the execution time of the algorithm
                     break;
             }
 
-        } while (option != 5);
+        } while (option != 3);
 
     }
 
@@ -218,7 +212,7 @@ public class Menu {
                 break;
 
             case 2:
-                sailors = DatasetLoader.loadNavigator("sailorsS");
+                sailors = DatasetLoader.loadNavigator("sailorsS.txt");
                 break;
 
             case 3:

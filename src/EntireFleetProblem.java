@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 
 public class EntireFleetProblem {
         public static void BackTracking_Problem(ArrayList<Center> centro){
-            BackTracking_EntrieFleet.Backtracking(centro);
+            BackTracking_EntireFleet.Backtracking(centro);
         }
         public static void Greedy_Problem(ArrayList<Center> centro){
             Greedy_EntireFleet best_child = null;
@@ -63,6 +63,8 @@ public class EntireFleetProblem {
                 System.out.println("No hay solucion");
             }
             else {
+                Menu.finished();
+
                 System.out.println("\n--- Best Solution ---");
                 for (int i = 0; i < best_child.getCost(); i++) {
                     System.out.println("Center: " + centro.get(best_child.config[i]).name + ", Types: " + centro.get(best_child.config[i]).types);
