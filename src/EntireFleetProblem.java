@@ -64,7 +64,7 @@ public class EntireFleetProblem {
             }
             else {
                 System.out.println("\n--- Best Solution ---");
-                for (int i = 0; i < best_child.config.length; i++) {
+                for (int i = 0; i < best_child.getCost(); i++) {
                     System.out.println("Center: " + centro.get(best_child.config[i]).name + ", Types: " + centro.get(best_child.config[i]).types);
                 }
                 System.out.println("--- Total centers: " + best_child.getCost() + " ---");
