@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +9,7 @@ public class EntireFleetProblem {
             BackTracking_EntrieFleet.Backtracking(centro);
         }
         public static void Greedy_Problem(ArrayList<Center> centro){
+            Greedy_EntireFleet best_child = null;
             boolean[] found = {true,true,true,true,true,true};
             boolean flag = false;
             // Iniciaització de l'array de distàncies mínimes
@@ -38,8 +40,9 @@ public class EntireFleetProblem {
                         if (child.getCost() < best && Arrays.equals(child.found_types, found)) {
                             best = child.getCost();
                             // Printem per debugar
-                            System.out.println(child);
-                            System.out.println("Best one!");
+                            //System.out.println(child);
+                            //System.out.println("Best one!");
+                            best_child = child;
                             flag = true;
                         }
                     } else {
@@ -58,6 +61,13 @@ public class EntireFleetProblem {
             }
             if (!flag){
                 System.out.println("No hay solucion");
+            }
+            else {
+                System.out.println("\n--- Best Solution ---");
+                for (int i = 0; i < best_child.config.length; i++) {
+                    System.out.println("Center: " + centro.get(best_child.config[i]).name + ", Types: " + centro.get(best_child.config[i]).types);
+                }
+                System.out.println("--- Total centers: " + best_child.getCost() + " ---");
             }
         }
 }
