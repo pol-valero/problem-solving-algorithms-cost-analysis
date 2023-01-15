@@ -218,7 +218,7 @@ public class Menu {
                 break;
 
             case 2:
-                sailors = DatasetLoader.loadNavigator("sailorsS");
+                sailors = DatasetLoader.loadNavigator("sailorsS.txt");
                 break;
 
             case 3:
