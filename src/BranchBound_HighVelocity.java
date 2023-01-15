@@ -4,15 +4,15 @@ import java.util.*;
 public class BranchBound_HighVelocity implements Comparable<BranchBound_HighVelocity>{
 
         // La configuració (representa l'ordre en que visitem les ciutats)
-        private final int[] config;
+        public final int[] config;
         // L'array de marcatge per ciutats visitades
-        private final boolean[] sailor_picked;
+        public final boolean[] sailor_picked;
         // El marcatge per la distància total viatjada
-        private float sailor_impact;
+        public float sailor_impact;
         // El nivell en el que ens trobem
-        private int level;
-        private ArrayList<Sailor> sailors;
-        private Vessel vessel;
+        public int level;
+        public ArrayList<Sailor> sailors;
+        public Vessel vessel;
 
 
 
@@ -105,10 +105,10 @@ public class BranchBound_HighVelocity implements Comparable<BranchBound_HighVelo
         @Override
         public int compareTo(BranchBound_HighVelocity that) {
             float total = this.estimate() - that.estimate();
-            if (total < 0){
+            if (total > 0){
                 return -1;
             }
-            if (total > 0){
+            if (total < 0){
                 return 1;
             }
             return 0;

@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class HighVelocityProblem {
     public static void BackTracking_Problem(ArrayList<Vessel> vessels, ArrayList<Sailor> sailors){
@@ -24,53 +21,69 @@ public class HighVelocityProblem {
         System.out.println("Total Speed:" + total_speed);
     }
     public static void BranchBound_Problem(ArrayList<Sailor> sailors, ArrayList<Vessel> vessels){
-// Iniciaització de l'array de distàncies mínimes
-        float best = Integer.MIN_VALUE;
+        ArrayList<Sailor> active = (ArrayList<Sailor>) sailors.clone();
+        float total_velocity = 0;
+        for (Vessel a: vessels) {
+            BranchBound_HighVelocity best_child = null;
 
-        // Priority Queue (Cua de prioritat) que farem servir per navegar l'espai de solucions de forma "dinàmica"
-        // A Java, la PriorityQueue fa servir la interfície Comparable per ordenar els seus elements
-        PriorityQueue<BranchBound_HighVelocity> cua = new PriorityQueue<>();
-        PriorityQueue<BranchBound_HighVelocity> queue = new PriorityQueue<>();
+            // Iniciaització de l'array de distàncies mínimes
+            float best = Integer.MIN_VALUE;
 
-        // Creem la configuració inicial i l'encuem
-        BranchBound_HighVelocity first = new BranchBound_HighVelocity(sailors, vessels.get(0),vessels);
-        queue.add(first);
+            // Priority Queue (Cua de prioritat) que farem servir per navegar l'espai de solucions de forma "dinàmica"
+            // A Java, la PriorityQueue fa servir la interfície Comparable per ordenar els seus elements
+            PriorityQueue<BranchBound_HighVelocity> cua = new PriorityQueue<>();
+            PriorityQueue<BranchBound_HighVelocity> queue = new PriorityQueue<>();
 
-        BranchBound_HighVelocity best_child;
-        // Repetim el següent procés fins que no quedin més configuracions a considerar
-        while(!queue.isEmpty()) {
-            // Agafem la primera configuració de la cua (major prioritat / menor cost estimat)
-            BranchBound_HighVelocity config = queue.poll();
+            // Creem la configuració inicial i l'encuem
+            BranchBound_HighVelocity first = new BranchBound_HighVelocity(active, a, vessels);
+            queue.add(first);
 
-            // L'expandim, obtenint els successors
-            List<BranchBound_HighVelocity> children = config.expand();
 
-            // Per cadascun dels successors
-            for (BranchBound_HighVelocity child : children) {
-                // Si és solució (hem pres totes les decisions)
-                if (child.isFull()) {
+            // Repetim el següent procés fins que no quedin més configuracions a considerar
+            while (!queue.isEmpty()) {
+                // Agafem la primera configuració de la cua (major prioritat / menor cost estimat)
+                BranchBound_HighVelocity config = queue.poll();
 
-                    // Procés d'optimització
-                    if (child.getCost() < best) {
-                        best_child = child;
-                        best = child.getCost();
-                        // Printem per debugar
-                        System.out.println(child);
-                        System.out.println("Best one!");
-                    }
-                } else {
-                    // Si no és solució (encara queden decisions per prendre)
-                    // PBMSC (depenent de l'heurística, podríem fer servir el cost estimat aquí)
-                    if (child.getCost() < best) {
-                        // Afegim el successor a la cua, que farà servir el seu cost estimat per determinar quan explorar-lo
-                        queue.offer(child);
+                // L'expandim, obtenint els successors
+                List<BranchBound_HighVelocity> children = config.expand();
+
+                // Per cadascun dels successors
+                for (BranchBound_HighVelocity child : children) {
+                    // Si és solució (hem pres totes les decisions)
+                    if (child.isFull()) {
+
+                        // Procés d'optimització
+                        if (child.getCost() > best) {
+                            best_child = child;
+                            best = child.getCost();
+                            // Printem per debugar
+                            //System.out.println(child);
+                            //System.out.println("Best one!");
+                        }
                     } else {
-                        // Debugging comentat per evitar gastar més recursos del compte
-                        //System.out.println(child);
-                        //System.out.println("PBCBS");
+                        // Si no és solució (encara queden decisions per prendre)
+                        // PBMSC (depenent de l'heurística, podríem fer servir el cost estimat aquí)
+                        if (child.getCost() > best) {
+                            // Afegim el successor a la cua, que farà servir el seu cost estimat per determinar quan explorar-lo
+                            queue.offer(child);
+                        } else {
+                            // Debugging comentat per evitar gastar més recursos del compte
+                            //System.out.println(child);
+                            //System.out.println("PBCBS");
+                        }
                     }
                 }
             }
+            ArrayList<Sailor> temp = new ArrayList<Sailor>();
+
+            for (int i = 0; i < best_child.config.length; i++) {
+                temp.add(active.get(best_child.config[i]));
+                System.out.println("Tripulacion: " + active.get(best_child.config[i]).name);
+            }
+            active.removeAll(temp);
+        System.out.println("--- Barco: " + a.name + " ; RealSpeed: " + best_child.getCost() + "\n");
+        total_velocity += best_child.getCost();
         }
+        System.out.println("--- Total velocity: " + total_velocity + " ---");
     }
 }
