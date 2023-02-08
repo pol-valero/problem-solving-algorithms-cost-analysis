@@ -73,8 +73,6 @@ public class BackTracking_HighVelocity {
         if (bestConfig < actual_speed) {
             bestConfig = actual_speed;
             config_win = config.clone();
-
-
         }
     }
 
