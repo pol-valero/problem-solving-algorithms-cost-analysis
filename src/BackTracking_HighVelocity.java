@@ -24,7 +24,7 @@ public class BackTracking_HighVelocity {
         while (config[k] <= 1) {
             if (k < config.length - 1) {
                 // Poda (Backtracking)
-                if (checkValid(config, k, vessel)) {
+                if (checkValid(config, k, vessel, sailors)) {
                     bruteForce(config, k + 1, sailors, vessel, vessels);
                 }
                 else {
@@ -40,12 +40,23 @@ public class BackTracking_HighVelocity {
         }
     }
 
-    private static boolean checkValid(int[] config, int k, Vessel vessel) {
+    private static boolean checkValid(int[] config, int k, Vessel vessel, ArrayList<Sailor> sailors) {
         int num_sailors = 0;
+        ArrayList<Sailor> Tripulation = new ArrayList<Sailor>();
+
         for (int i = 0; i <= k; i++) {
             num_sailors += config[i];
+            if (config[i] == 1){
+                Tripulation.add(sailors.get(i));
+            }
         }
         if (config[k] == 1 && sailor_picked[k]){
+            return false;
+        }
+
+        double actual_speed = getRealSpeed(vessel, Tripulation);
+
+        if (actual_speed <= bestConfig) {
             return false;
         }
         return (num_sailors <= vessel.capacity);
