@@ -14,6 +14,7 @@ public class Greedy_EntireFleet{
                 }
                 temp.remove(0);
                 if (found == 6){
+                    Menu.finished();
                     System.out.println("\n--- Best Configuration ---");
                     for (Center a: Solution) {
                         System.out.println("Center: " + a.name +", Types: " + a.types);
