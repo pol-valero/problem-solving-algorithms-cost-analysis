@@ -1,0 +1,7 @@
+6
+94100;Bullet Time Barramundi;Laser;254.0;4.93;2;22587;new;9;Arbolez Mentorosos
+51;Papaya Red The Bum;Optimist;137.5;0.6;1;63833;new;18;Fens of Serech
+4;Red Wine Geordi La Forge;Windsurf;134.4;0.5;1;70797;restored;8;Arbolez Mentorosos
+9348;Wakame Linda McFly;HobieCat;137.01;0.81;4;15093;restored;11;Fens of Serech
+55769;Vision Tinned;Patí Català;182.63;3.33;3;55070;new;18;Arbolez Mentorosos
+83506;Sake Biff Tannen;HobieDragoon;263.2;5.18;3;54309;new;7;Fens of Serech

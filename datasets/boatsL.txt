@@ -1,0 +1,51 @@
+50
+4533;Red Cabbage Lou;HobieDragoon;201.85;4.05;3;39342;restored;30;Planet Squanch
+60;Hydrokinesis Rhubarb;Laser;253.53;5.16;2;39984;unavailable;5;Aglarond
+57192032;Vermicelli Noodles Nyota Uhuru;Optimist;131.04;0.5;1;60236;restored;17;Pluto
+8917964;Time Travel Mustard Seed;HobieDragoon;201.66;4.14;3;40166;broken;30;Kaitain
+2261;Bay Leaves Chakotay;HobieDragoon;186.16;4.36;3;69398;new;18;Utumno
+2;Matter Absorption Tofu;Optimist;138.05;0.5;1;70657;unavailable;8;Aldburg
+7795;Pecorino Nyota Uhuru;Optimist;130.16;1.41;1;34958;new;12;Screaming Sun Earth
+188980834;Star Anise Lou;Laser;272.78999999999996;5.12;2;21364;restored;8;Interdimensional Customs
+330129818;Substance Secretion Hazelnut;Windsurf;118.21000000000001;0.5;1;60391;restored;15;Arrakis
+446824;Nova Force Corn Oil;Laser;315.14;4.95;2;76591;new;9;Cronenberg World
+4401734;Wholewheat Flour James Tiberius Kirk;Patí Català;206.26;4.01;3;61722;restored;20;Pawn Shop Planet
+16039799;Peas The Doctor;HobieCat;358.37;5.07;4;89482;unavailable;29;Cronenberg World
+7578;Nasturtium Einstein;HobieDragoon;204.13;3.54;3;84506;restored;14;Rath Dínen
+73;Tinned Jonathan Archer;Optimist;133.5;0.5;1;32453;new;8;Selusa Secundus
+5;Enhanced Senses Vanilla Beans;Windsurf;115.16;0.5;1;1756;unavailable;31;Purge Planet
+104;Turnips The Doctor;HobieDragoon;182.78;3.44;3;43331;restored;36;Caladan
+542000;Edam Quark;Laser;297.47;4.58;2;72187;new;15;Parblesnops
+6357711;Harissa Quark;Optimist;136.66;0.84;1;17775;new;12;Cronenberg World
+9602149;Mangosteens Mr. Peabody;HobieDragoon;191.8;4.06;3;76662;new;30;Interdimensional Customs
+652886785;Cassia bark Lorraine Baines;HobieDragoon;200.61;4.09;3;2612;broken;27;Planet Squanch
+9513;Lentils Joey Baines;Laser;336.78;4.8;2;11035;broken;20;Pawn Shop Planet
+8978;Shiitake Mushrooms Skinhead;HobieCat;321.22;4.52;4;28560;new;36;Aglarond
+60052111;Buckwheat Stella Baines;HobieCat;349.15999999999997;5.4;4;71400;new;33;Caladan
+98;Kombu Hikaru Sulu;Laser;344.27;5.01;2;46689;new;16;Parblesnops
+24475970;Cos Lettuce Julian Bashir;Optimist;132.11;1.22;1;12906;new;20;Cronenberg World
+53408949;Cryokinesis Plums;Laser;314.9;4.72;2;78269;unavailable;14;Parblesnops
+591764912;Summoning Mullet;Patí Català;201.53;3.07;3;70170;restored;23;Cronenberg World
+41700;Flaxseed Oil Data;HobieCat;312.96000000000004;4.35;4;58626;broken;13;Pawn Shop Planet
+409725116;Cashews Joey Baines;HobieDragoon;215.69;4.23;3;89019;new;13;Rath Dínen
+3;Hazelnut Jennifer Parker;Windsurf;112.97;0.5;1;7981;new;21;Screaming Sun Earth
+112414413;Stamina Fruit;Patí Català;200.11;4.32;3;75821;new;36;Utumno
+86;Magnetokinesis Vermicelli Noodles;Laser;331.73;5.39;2;10431;new;9;Selusa Secundus
+804;White Wine Vinegar Red The Bum;Optimist;133.07;0.94;1;56286;restored;20;Arrakis
+974;Unbleached Flour Benjamin Sisko;HobieCat;305.58000000000004;5.63;4;82067;new;14;Aldburg
+40202;Omega Spread Mr. Strickland;Windsurf;113.87;1.03;1;18570;new;29;Arrakis
+71396;Aniseed Milton Baines;HobieDragoon;193.53;3.84;3;22008;unavailable;31;Caladan
+70616;Precognition Oyster Mushrooms;Laser;346.86;4.65;2;79483;new;10;Screaming Sun Earth
+4417326;Peaches George McFly;Patí Català;185.28;3.4;3;51535;new;38;Rath Dínen
+71727949;Electrokinesis French Eschallots;Laser;358.63;4.38;2;54487;new;12;Aldburg
+83;Annatto Seed Harry Kim;Optimist;135.09;0.5;1;75180;new;8;Rath Dínen
+48;Spinach Einstein;Windsurf;117.15;0.99;1;34857;new;31;Kaitain
+945959649;Soy Sauce Seven of Nine;HobieCat;327.41999999999996;5.44;4;27478;new;25;Cronenberg World
+132604;Flour Charles Tucker III;HobieDragoon;211.61;3.49;3;40622;new;13;Selusa Secundus
+97115177;Cross-Dimensional Travel Butter;Patí Català;210.01999999999998;3.38;3;25379;new;27;Parblesnops
+598;Cake Milton Baines;Patí Català;190.92000000000002;3.24;3;14982;broken;18;Aglarond
+80652478;Teleportation Pear Juice;Optimist;137.18;0.5;1;49304;restored;10;Caladan
+48602;Molasses Lou;HobieCat;371.75;4.18;4;14665;restored;34;Selusa Secundus
+990614617;Nori Match;Laser;322.15;5.1;2;74892;new;20;Arrakis
+419346;Wakame Sally Baines;Optimist;134.09;0.5;1;7051;new;21;Utumno
+5799;Macadamia Oil T'Pol;Optimist;138.39;0.79;1;86100;new;25;Screaming Sun Earth
